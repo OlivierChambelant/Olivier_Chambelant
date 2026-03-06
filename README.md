@@ -1,12 +1,6 @@
 # Olivier Chambelant
 
-**Directeur TI et IA — Consultant freelance**
-
-Près de 20 ans d’expérience en direction de systèmes d’information, infrastructure réseau et transformation numérique dans des environnements industriels critiques. Actuellement en mission dans le secteur énergétique sur un portefeuille de modernisation de 3 M€.
-
-Intègre l’intelligence artificielle — systèmes multi-agents, prompt engineering — comme levier de performance et d’aide à la décision.
-
-Formation militaire (Armée de l’Air, 5 ans, opérations critiques).
+Directeur TI et IA — 20 ans d’expérience en infrastructure, gouvernance et transformation numérique. Architecte de systèmes multi-agents IA (Clawdbot). Consultant freelance. Missions en environnements industriels critiques.
 
 -----
 
@@ -22,12 +16,10 @@ Formation militaire (Armée de l’Air, 5 ans, opérations critiques).
 
 ## Ce que tu trouveras ici
 
-|Dépôt                |Contenu                                                             |
-|---------------------|--------------------------------------------------------------------|
-|`clawdbot`           |Système multi-agents IA — architecture, configuration, documentation|
-|`automatisations`    |Scripts et workflows (Make.com, Telegram, Python)                   |
-|`prompts-engineering`|Prompts structurés pour cas d’usage professionnels                  |
-|`travaux-structures` |Analyses, dossiers VAE et productions académiques                   |
+- Mon CV
+- Mon dossier de VAE
+- Mes travaux universitaires (TÉLUQ)
+- Mes diplômes et certifications
 
 -----
 
