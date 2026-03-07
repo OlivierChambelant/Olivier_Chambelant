@@ -17,7 +17,6 @@ Directeur TI et IA — 20 ans d’expérience en infrastructure, gouvernance et 
 ## Ce que tu trouveras ici
 
 - Mon CV
-- Mes travaux universitaires (TÉLUQ)
 - Mes diplômes et certifications
 
 -----
