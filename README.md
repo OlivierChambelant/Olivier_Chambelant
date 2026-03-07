@@ -17,15 +17,8 @@ Directeur TI et IA — 20 ans d’expérience en infrastructure, gouvernance et 
 ## Ce que tu trouveras ici
 
 - Mon CV
-- Mon dossier de VAE
 - Mes travaux universitaires (TÉLUQ)
 - Mes diplômes et certifications
-
------
-
-## Stack principale
-
-`Python` `JSON` `API REST` `Make.com` `Claude API` `Cisco / Meraki` `Azure` `Microsoft 365` `Git`
 
 -----
 
