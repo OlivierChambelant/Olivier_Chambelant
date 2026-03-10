@@ -1,6 +1,4 @@
-# Projet d'intégration de l'intelligence artificielle dans les entreprises
-
----
+# Projet d'intégration de l'intelligence artificielle dans les entreprises - Olivier Chambelant
 
 ## 1. Analyse du problème
 
