@@ -1,4 +1,5 @@
 # Projet d'intégration de l'intelligence artificielle dans les entreprises
+Olivier Chambelant
 
 ## 1. Contexte et problématique
 
