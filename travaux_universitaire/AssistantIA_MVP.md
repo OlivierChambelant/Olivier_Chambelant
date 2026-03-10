@@ -146,10 +146,15 @@ Sur les tests 2, 3 et 4, Alfred produit des analyses qui vont au-delà de la cl�
 
 Ces ajouts améliorent la lisibilité sans dégrader la concision. Ils n'étaient pas demandés dans le prompt. Le modèle a trouvé seul des façons utiles de structurer l'information, dans le cadre posé par le prompt système.
 
+---
+
 <img width="781" height="780" alt="image" src="https://github.com/user-attachments/assets/f919105d-7432-47dd-9613-c4522cdc33c5" />
+
+---
 
 <img width="695" height="938" alt="image" src="https://github.com/user-attachments/assets/2fd18b83-981c-4637-a63b-2263dfd04437" />
 
+---
 
 *La vidéo de démonstration (section 7) montre Alfred en action sur un cas concret.*
 
