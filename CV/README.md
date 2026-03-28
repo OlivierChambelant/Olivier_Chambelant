@@ -2,6 +2,7 @@
 
 **Directeur TI / IT Director - Directeur IA / AI Director**  
 olivier.chambelant@gmail.com - +1 (819) 489-1233  
+
 **LinkedIn** : [linkedin.com/in/olivier-chambelant](https://linkedin.com/in/olivier-chambelant)  
 **GitHub** : [github.com/OlivierChambelant](https://github.com/OlivierChambelant)  
 **SubStack** : [olivierchambelant.substack.com](https://olivierchambelant.substack.com)  
