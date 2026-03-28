@@ -37,7 +37,7 @@ Directeur TI et IA avec 20 ans d'experience en gestion d'infrastructures informa
 
 ## Experience professionnelle
 
-### Consultant en gestion de projets d'infrastructure TI | Avr. 2024 - En cours  
+### Consultant en gestion de projets d'infrastructure TI | Avr. 2025 - En cours  
 *Framatome (Nucleaire) - via NetManagerPro SAS*
 
 - Piloter un portefeuille de modernisation informatique de 4 M€ en milieu nucleaire reglemente, en alignant chaque projet sur les priorites strategiques validees par la direction generale et en rendant compte au comite de direction  
