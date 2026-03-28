@@ -11,7 +11,7 @@ olivier.chambelant@gmail.com - +1 (819) 489-1233
 
 ## Sommaire professionnel
 
-Directeur TI et IA avec 20 ans d'experience en gestion d'infrastructures informatiques, transformation numerique et integration de l'intelligence artificielle dans des environnements industriels critiques internationaux (nucleaire, pharmaceutique, agroalimentaire). Pilotage de projets complexes (budgets de 1 M$ a 4 M$ CAD), encadrement d'equipes de 2 a 13 personnes. Certifie ITIL 4, PRINCE2, CCNP. Bilingue francais-anglais (BULAT B2).
+Directeur TI et IA avec 20 ans d'experience en gestion d'infrastructures informatiques, transformation numerique et integration de l'intelligence artificielle dans des environnements industriels critiques internationaux (nucleaire, pharmaceutique, agroalimentaire). Pilotage de projets complexes (budgets de 1 M€ a 4 M€), encadrement d'equipes de 2 a 13 personnes. Certifie ITIL 4, PRINCE2, CCNP. Bilingue francais-anglais (BULAT B2).
 
 ---
 
@@ -40,7 +40,7 @@ Directeur TI et IA avec 20 ans d'experience en gestion d'infrastructures informa
 ### Consultant en gestion de projets d'infrastructure TI | Avr. 2024 - En cours
 *Framatome (Nucleaire) - via NetManagerPro SAS*
 
-- Piloter un portefeuille de modernisation informatique de 4 M$ CAD en milieu nucleaire reglemente, en alignant chaque projet sur les priorites strategiques validees par la direction generale et en rendant compte au comite de direction
+- Piloter un portefeuille de modernisation informatique de 4 M€ en milieu nucleaire reglemente, en alignant chaque projet sur les priorites strategiques validees par la direction generale et en rendant compte au comite de direction
 - Coordonner la mise en service reseau et securite de 15 batiments industriels en parallele de la production, sans aucune interruption d'activite ni d'impact sur la chaine de valeur, dans le respect des normes de surete nucleaire
 - Piloter la migration de systemes critiques obsoletes vers des solutions modernes et conformes, reduisant les risques d'arret de production lies au vieillissement du parc et renforcant la conformite reglementaire du site
 - Assurer la coordination transversale entre equipes TI, metiers, fournisseurs externes et comite de direction dans un environnement a exigences reglementaires elevees, en garantissant le respect des delais et des budgets alloues
@@ -49,7 +49,7 @@ Directeur TI et IA avec 20 ans d'experience en gestion d'infrastructures informa
 *Sodiaal (Agroalimentaire, 100 sites) - via NetManagerPro SAS*
 
 - Reprendre en urgence la gestion d'un parc reseau de 100 sites en crise de gouvernance, retablir la visibilite operationnelle en moins de 30 jours et superviser directement 5 ingenieurs et un partenaire en impartition
-- Initier et cadrer le programme de deploiement SD-WAN sur 100 sites : analyse complete des besoins, definition du calendrier, des jalons cles et du budget previsionnel de 2 M$ CAD presente et valide par la DSI
+- Initier et cadrer le programme de deploiement SD-WAN sur 100 sites : analyse complete des besoins, definition du calendrier, des jalons cles et du budget previsionnel de 2 M€ presente et valide par la DSI
 - Proposer a la DSI une feuille de route IoT pour le suivi connecte du cheptel, en identifiant les partenaires technologiques specialises et en formalisant l'analyse couts-benefices pour decision du comite de direction
 - Livrer une documentation technique exhaustive et un plan de reprise operationnel structure, garantissant la continuite totale de service et la montee en competence de l'equipe interne lors du transfert en fin de mandat
 
