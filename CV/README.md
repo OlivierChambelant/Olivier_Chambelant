@@ -4,7 +4,7 @@
 olivier.chambelant@gmail.com - +1 (819) 489-1233  
 
 **LinkedIn** : [linkedin.com/in/olivier-chambelant](https://linkedin.com/in/olivier-chambelant)  
-**GitHub** : [github.com/OlivierChambelant](https://github.com/OlivierChambelant)  
+**GitHub** : [github.com/OlivierChambelant]([https://github.com/OlivierChambelant](https://github.com/OlivierChambelant/Olivier_Chambelant))  
 **SubStack** : [olivierchambelant.substack.com](https://olivierchambelant.substack.com)  
 
 ---
