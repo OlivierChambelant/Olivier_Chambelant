@@ -1,0 +1,76 @@
+cff-version: 1.2.0
+title: "Olivier Chambelant — Portfolio professionnel (CV, diplômes, travaux IA)"
+message: "Si vous citez ce travail, merci d'utiliser les métadonnées ci-dessous."
+type: software
+authors:
+  - family-names: Chambelant
+    given-names: Olivier
+    email: olivier.chambelant@gmail.com
+    orcid: ""
+    affiliation: "NetManagerPro SAS"
+    website: "https://linkedin.com/in/olivier-chambelant"
+identifiers:
+  - description: "GitHub repository"
+    type: url
+    value: "https://github.com/OlivierChambelant/Olivier_Chambelant"
+repository-code: "https://github.com/OlivierChambelant/Olivier_Chambelant"
+url: "https://github.com/OlivierChambelant/Olivier_Chambelant"
+abstract: >-
+  Portfolio professionnel d'Olivier Chambelant, Directeur Informatique (DSI / CIO)
+  et Directeur IA (CAIO / AI Director) avec 20 ans d'expérience en gestion
+  d'infrastructures informatiques, transformation numérique et intégration de
+  l'intelligence artificielle dans des environnements industriels critiques
+  internationaux (nucléaire, pharmaceutique, agroalimentaire, défense). Le dépôt
+  contient le CV complet, les diplômes et certifications (ITIL 4, PRINCE2, CCNP,
+  Harvard Leadership Accelerator, Cegos Directeur Informatique, TÉLUQ Programme
+  IA), ainsi que les travaux universitaires appliqués aux systèmes multi-agents
+  IA (projets Clawdbot et Alfred).
+keywords:
+  - CIO
+  - DSI
+  - Directeur Informatique
+  - IT Director
+  - CAIO
+  - Directeur IA
+  - AI Director
+  - Chief AI Officer
+  - CDO
+  - Chief Digital Officer
+  - CTO
+  - Interim CIO
+  - DSI de transition
+  - freelance CIO
+  - digital transformation
+  - transformation numérique
+  - IT governance
+  - gouvernance TI
+  - AI strategy
+  - stratégie IA
+  - multi-agent systems
+  - systèmes multi-agents
+  - Claude
+  - Anthropic
+  - prompt engineering
+  - responsible AI
+  - IA responsable
+  - cybersecurity
+  - cybersécurité
+  - Cisco
+  - Meraki
+  - CCNP
+  - ITIL 4
+  - PRINCE2
+  - Harvard Leadership Accelerator
+  - Cegos
+  - Université TÉLUQ
+  - nuclear IT
+  - pharmaceutical IT
+  - critical infrastructure
+  - infrastructure critique
+  - France
+  - Québec
+  - portfolio
+  - CV
+license: CC-BY-NC-ND-4.0
+version: "1.0.0"
+date-released: "2025-11-01"

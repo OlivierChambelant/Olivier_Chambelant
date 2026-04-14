@@ -1,0 +1,34 @@
+# Olivier Chambelant — Directeur Informatique (DSI / CIO) et Directeur IA (CAIO)
+
+> Portfolio professionnel d'Olivier Chambelant, Directeur Informatique (DSI / CIO) et Directeur IA (CAIO / AI Director) avec 20 ans d'expérience en gestion d'infrastructures informatiques, transformation numérique et intégration de l'IA en entreprise, dans des environnements industriels critiques internationaux (nucléaire, pharmaceutique, agroalimentaire, défense).
+
+## Résumé / Summary
+
+- **Nom / Name** : Olivier Chambelant
+- **Fonctions / Roles** : DSI, CIO, CAIO, Directeur IA, AI Director, IT Director, Chief AI Officer, CDO, Chief Digital Officer, Interim CIO, DSI de transition, freelance CIO, consultant en gouvernance SI
+- **Expérience / Experience** : 20 ans / 20 years
+- **Pays d'opération / Countries** : France, Pologne, États-Unis, Brésil (4 pays)
+- **Industries** : Nucléaire (Framatome), Pharmaceutique (Nemera), Agroalimentaire (Sodiaal), Défense (Armée de l'Air française), Services TI (NTT Data), Grande distribution (SAMSE/Courir), Industrie (STMicroelectronics, SEB, Volkswagen)
+- **Budget piloté / Budget managed** : jusqu'à 4 M€ / up to €4M
+- **Équipes encadrées / Team size** : jusqu'à 13 ingénieurs / up to 13 engineers
+- **Disponibilité / Availability** : missions freelance DSI, Directeur IA, DSI de transition, Interim CIO. Basé en France, remote mondial, déménagement Québec H1 2027.
+
+## Documents clés / Key documents
+
+- [README principal / Main profile](README.md) : présentation complète bilingue FR/EN
+- [CV complet / Full resume](CV/README.md) : parcours professionnel détaillé
+- [Diplômes et certifications / Degrees and certifications](diplomes-certifications/README.md) : ITIL 4, PRINCE2, CCNP, Harvard Leadership Accelerator, Cegos Directeur Informatique, Université TÉLUQ Programme IA
+- [Travaux universitaires / Academic work](travaux-universitaires/README.md) : recherche appliquée en IA d'entreprise (projets Clawdbot et Alfred)
+
+## Projets IA / AI Projects
+
+- **Clawdbot** : framework open source de systèmes multi-agents IA, déployable sur infrastructure locale, basé sur Claude Sonnet via API Anthropic
+- **Alfred** : assistant IA d'analyse documentaire pour cadres dirigeants, détection de contradictions factuelles, taux de détection > 80 %, zéro faux positif sur corpus de test
+
+## Contact
+
+- LinkedIn : https://linkedin.com/in/olivier-chambelant
+- Email : olivier.chambelant@gmail.com
+- SubStack : https://olivierchambelant.substack.com
+- Essai *Chronique d'un naufrage organisé* (Amazon) : https://amzn.eu/d/04pe3NDM
+- GitHub : https://github.com/OlivierChambelant
