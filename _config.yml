@@ -1,0 +1,62 @@
+# Configuration Jekyll pour GitHub Pages
+# Site : Portfolio professionnel Olivier Chambelant
+
+title: "Olivier Chambelant — Directeur Informatique (DSI/CIO) & Directeur IA (CAIO)"
+tagline: "IT Director & AI Director — 20 ans d'expérience en infrastructures critiques et transformation numérique"
+description: >-
+  Olivier Chambelant, Directeur Informatique (DSI / CIO) et Directeur IA (CAIO / AI Director)
+  avec 20 ans d'expérience en pilotage de systèmes d'information en environnements industriels
+  critiques (nucléaire, pharmaceutique, agroalimentaire, défense). Certifié ITIL 4, PRINCE2, CCNP,
+  Harvard Leadership Accelerator. Disponible pour missions freelance DSI, Directeur IA, DSI de transition.
+author:
+  name: Olivier Chambelant
+  email: olivier.chambelant@gmail.com
+  url: https://linkedin.com/in/olivier-chambelant
+
+# URL du site (sera overridée par GitHub Pages)
+url: "https://olivierchambelant.github.io"
+baseurl: "/Olivier_Chambelant"
+
+# Langue principale
+lang: fr-FR
+
+# Thème (supporté nativement par GitHub Pages)
+theme: jekyll-theme-minimal
+
+# Plugins (whitelist GitHub Pages)
+plugins:
+  - jekyll-seo-tag
+  - jekyll-sitemap
+
+# Métadonnées SEO
+logo: null
+social:
+  name: Olivier Chambelant
+  links:
+    - https://linkedin.com/in/olivier-chambelant
+    - https://olivierchambelant.substack.com
+    - https://github.com/OlivierChambelant
+twitter:
+  username: ""
+  card: summary_large_image
+
+# Exclusions du build (fichiers inutiles côté site public)
+exclude:
+  - CITATION.cff
+  - LICENSE
+  - llms.txt
+  - README.md~
+  - .git
+  - .gitignore
+  - Gemfile
+  - Gemfile.lock
+  - vendor
+
+# Mots-clés SEO (utilisés par jekyll-seo-tag)
+keywords: >-
+  DSI, CIO, Directeur Informatique, IT Director, CAIO, Directeur IA, AI Director,
+  Chief AI Officer, CDO, CTO, Interim CIO, DSI de transition, freelance CIO,
+  transformation numérique, digital transformation, gouvernance TI, IT governance,
+  stratégie IA, AI strategy, multi-agent systems, Claude, Anthropic, prompt engineering,
+  Cisco, Meraki, CCNP, ITIL 4, PRINCE2, Harvard, Cegos, TÉLUQ, nucléaire, pharmaceutique,
+  France, Québec

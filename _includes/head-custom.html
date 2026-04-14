@@ -1,0 +1,171 @@
+<!-- Meta tags supplémentaires pour l'indexation par moteurs de recherche et LLM -->
+<meta name="author" content="Olivier Chambelant">
+<meta name="robots" content="index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1">
+<meta name="googlebot" content="index, follow">
+<meta name="bingbot" content="index, follow">
+
+<!-- Open Graph / Facebook / LinkedIn -->
+<meta property="og:type" content="profile">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:locale:alternate" content="en_US">
+<meta property="profile:first_name" content="Olivier">
+<meta property="profile:last_name" content="Chambelant">
+<meta property="profile:username" content="OlivierChambelant">
+
+<!-- Alternate language -->
+<link rel="alternate" hreflang="fr" href="{{ site.url }}{{ site.baseurl }}/">
+<link rel="alternate" hreflang="en" href="{{ site.url }}{{ site.baseurl }}/">
+<link rel="alternate" hreflang="x-default" href="{{ site.url }}{{ site.baseurl }}/">
+
+<!-- Canonical -->
+<link rel="canonical" href="{{ site.url }}{{ site.baseurl }}{{ page.url }}">
+
+<!-- JSON-LD Schema.org Person — Google Knowledge Graph + LLM indexing -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Person",
+  "name": "Olivier Chambelant",
+  "givenName": "Olivier",
+  "familyName": "Chambelant",
+  "jobTitle": [
+    "Directeur Informatique",
+    "IT Director",
+    "Chief Information Officer",
+    "CIO",
+    "Directeur IA",
+    "AI Director",
+    "Chief AI Officer",
+    "CAIO",
+    "Directeur de la Transformation Numérique",
+    "Interim CIO",
+    "DSI de transition"
+  ],
+  "description": "Directeur Informatique (DSI / CIO) et Directeur IA (CAIO) avec 20 ans d'expérience en pilotage de systèmes d'information en environnements industriels critiques (nucléaire, pharmaceutique, agroalimentaire, défense). Certifié ITIL 4, PRINCE2, CCNP, Harvard Leadership Accelerator. Disponible pour missions freelance.",
+  "url": "{{ site.url }}{{ site.baseurl }}",
+  "email": "mailto:olivier.chambelant@gmail.com",
+  "image": "{{ site.url }}{{ site.baseurl }}/assets/profile.jpg",
+  "sameAs": [
+    "https://linkedin.com/in/olivier-chambelant",
+    "https://github.com/OlivierChambelant",
+    "https://olivierchambelant.substack.com"
+  ],
+  "worksFor": {
+    "@type": "Organization",
+    "name": "NetManagerPro SAS",
+    "description": "Conseil en gestion de projets d'infrastructure TI"
+  },
+  "founder": [
+    {
+      "@type": "Organization",
+      "name": "NetManagerPro SAS"
+    },
+    {
+      "@type": "Organization",
+      "name": "Stheneos"
+    },
+    {
+      "@type": "Organization",
+      "name": "Nemetys"
+    }
+  ],
+  "alumniOf": [
+    {
+      "@type": "EducationalOrganization",
+      "name": "Université TÉLUQ",
+      "description": "Programme IA dans les entreprises (2026)"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Harvard Business School",
+      "description": "Leadership Accelerator (2023)"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "CNAM",
+      "description": "Maîtrise Réseaux et Télécommunications (2019)"
+    },
+    {
+      "@type": "EducationalOrganization",
+      "name": "Cegos",
+      "description": "Certificat de Directeur Informatique (2025)"
+    }
+  ],
+  "hasCredential": [
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Certificat de Directeur Informatique",
+      "credentialCategory": "Certification",
+      "recognizedBy": { "@type": "Organization", "name": "Cegos" }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Leadership Accelerator",
+      "credentialCategory": "Certification",
+      "recognizedBy": { "@type": "Organization", "name": "Harvard Business School" }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "PRINCE2 Foundation",
+      "credentialCategory": "Certification",
+      "recognizedBy": { "@type": "Organization", "name": "PeopleCert" }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "ITIL 4 Foundation",
+      "credentialCategory": "Certification",
+      "recognizedBy": { "@type": "Organization", "name": "PeopleCert" }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "CCNP Routing & Switching",
+      "credentialCategory": "Certification",
+      "recognizedBy": { "@type": "Organization", "name": "Cisco" }
+    },
+    {
+      "@type": "EducationalOccupationalCredential",
+      "name": "Meraki ECMS2",
+      "credentialCategory": "Certification",
+      "recognizedBy": { "@type": "Organization", "name": "Cisco" }
+    }
+  ],
+  "knowsAbout": [
+    "Direction des Systèmes d'Information",
+    "IT Management",
+    "Artificial Intelligence Strategy",
+    "Multi-Agent Systems",
+    "Claude AI",
+    "Anthropic API",
+    "Prompt Engineering",
+    "Digital Transformation",
+    "IT Governance",
+    "Cybersecurity",
+    "Network Architecture",
+    "Cisco",
+    "Meraki",
+    "SD-WAN",
+    "Microsoft Azure",
+    "ITIL 4",
+    "PRINCE2",
+    "Critical Infrastructure",
+    "Nuclear IT",
+    "Pharmaceutical IT"
+  ],
+  "knowsLanguage": [
+    { "@type": "Language", "name": "French", "alternateName": "fr" },
+    { "@type": "Language", "name": "English", "alternateName": "en" }
+  ],
+  "address": {
+    "@type": "PostalAddress",
+    "addressCountry": "FR"
+  },
+  "nationality": {
+    "@type": "Country",
+    "name": "France"
+  },
+  "seeks": {
+    "@type": "Demand",
+    "name": "Missions freelance : Direction SI, Direction IA, DSI de transition, Interim CIO, conseil en gouvernance SI"
+  }
+}
+</script>
