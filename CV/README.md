@@ -1,11 +1,15 @@
 # Olivier Chambelant
 
-**Directeur TI / IT Director - Directeur IA / AI Director**  
-olivier.chambelant@gmail.com - +1 (819) 489-1233  
+**Directeur Informatique (DSI / CIO) · Directeur IA (CAIO / AI Director) · Directeur de la Transformation Numérique**
+**Interim CIO · DSI de transition · Consultant freelance en gouvernance et architecture SI**
 
-**LinkedIn** : [linkedin.com/in/olivier-chambelant](https://linkedin.com/in/olivier-chambelant)  
-**GitHub** : [github.com/OlivierChambelant](https://github.com/OlivierChambelant/Olivier_Chambelant)  
-**SubStack** : [olivierchambelant.substack.com](https://olivierchambelant.substack.com)  
+olivier.chambelant@gmail.com · +1 (819) 489-1233
+
+**LinkedIn** : [linkedin.com/in/olivier-chambelant](https://linkedin.com/in/olivier-chambelant)
+**GitHub** : [github.com/OlivierChambelant](https://github.com/OlivierChambelant)
+**SubStack** : [olivierchambelant.substack.com](https://olivierchambelant.substack.com)
+
+> [EN] IT Director (CIO) and AI Director (CAIO) with 20 years of experience leading IT infrastructure, digital transformation and enterprise AI deployment across critical industrial environments (nuclear, pharmaceutical, food industry, defense). Certified ITIL 4, PRINCE2, CCNP, Harvard Leadership Accelerator. Available for freelance and interim CIO/CAIO assignments worldwide.
 
 ---
 
@@ -115,5 +119,13 @@ Auteur : Chronique d'un naufrage organise (essai sur le leadership et la transfo
 
 ---
 
-*Disponible pour missions freelance DSI / Architecte IA*
-*Base en France - Ouvert aux missions remote et aux projets au Quebec - Déménagement prévu au Québec premier semestre 2027*
+*Disponible pour missions freelance DSI / Architecte IA / Directeur IA / DSI de transition*
+*Basé en France — Ouvert aux missions remote et aux projets au Québec — Déménagement prévu au Québec premier semestre 2027*
+
+---
+
+## Mots-clés / Keywords
+
+*DSI, CIO, Directeur Informatique, IT Director, CAIO, Directeur IA, AI Director, Chief AI Officer, CDO, Chief Digital Officer, CTO, Interim CIO, DSI de transition, freelance CIO, consultant DSI, gouvernance TI, IT governance, architecture SI, stratégie IA, AI strategy, digital transformation, transformation numérique, cybersécurité, infrastructure critique, multi-agent systems, systèmes multi-agents, Claude, GPT, Anthropic, prompt engineering, IA responsable, Cisco, Meraki, CCNP, SD-WAN, NAC, Azure, Microsoft 365, ITIL 4, PRINCE2, Harvard Leadership Accelerator, Cegos, Université TÉLUQ, nucléaire, pharmaceutique, agroalimentaire, défense, Framatome, Nemera, Sodiaal, NTT Data, France, Québec, remote*
+
+→ [Retour au profil principal](../README.md)
