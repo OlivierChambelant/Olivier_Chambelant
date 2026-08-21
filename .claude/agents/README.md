@@ -12,11 +12,30 @@ name: nom-en-kebab-case
 description: Spécialité de l'agent et QUAND l'utiliser. C'est sur ce texte
   que l'orchestrateur se base pour router les requêtes — sois précis.
 tools: Read, Glob, Grep        # le strict nécessaire (moindre privilège)
+model: sonnet                  # le modèle au meilleur ROI pour la tâche
 ---
 
 Prompt système de l'agent : son rôle, sa méthode de travail, ses critères
 de qualité et le format de sortie attendu.
 ```
+
+## Choix du modèle (optimisation du ROI)
+
+Chaque agent déclare le modèle le moins cher qui fait le travail au niveau
+de qualité requis — on ne paie la puissance que là où elle rapporte :
+
+| Modèle | Coût | Quand l'utiliser |
+|---|---|---|
+| `haiku` | € | Tâches mécaniques et volumineuses : extraction, lecture de PDF, résumé factuel, tri, reformatage, vérifications simples |
+| `sonnet` | €€ | Défaut polyvalent : usage d'outils, recherche et filtrage avec jugement, rédaction courante, analyse standard |
+| `opus` | €€€ | Raisonnement complexe ou livrable à fort enjeu et faible volume : rédaction stratégique (CV, candidature décisive), arbitrages difficiles, synthèse multi-sources critique |
+
+Règles :
+- En cas de doute entre deux modèles, prendre le moins cher et ne monter
+  en gamme que si la qualité s'avère insuffisante.
+- Un même agent peut être invoqué avec un modèle supérieur ponctuellement
+  (paramètre `model` de l'outil Agent) quand l'enjeu de la tâche le
+  justifie — sans changer son fichier.
 
 ## Cycle de vie
 
@@ -30,8 +49,8 @@ de qualité et le format de sortie attendu.
 
 ## Agents actuels
 
-| Agent | Spécialité |
-|---|---|
-| `redacteur-cv` | CV, lettres de motivation, optimisation ATS |
-| `chercheur-emploi` | Recherche et analyse d'offres d'emploi / missions |
-| `documentaliste` | Lecture, synthèse et organisation des documents du dépôt |
+| Agent | Spécialité | Modèle | Justification ROI |
+|---|---|---|---|
+| `redacteur-cv` | CV, lettres de motivation, optimisation ATS | `opus` | Fort enjeu (candidatures), faible volume : la qualité rédactionnelle paie directement |
+| `chercheur-emploi` | Recherche et analyse d'offres d'emploi / missions | `sonnet` | Usage d'outils et jugement d'adéquation ; volume moyen |
+| `documentaliste` | Lecture, synthèse et organisation des documents du dépôt | `haiku` | Extraction et synthèse factuelles, volumineuses, peu risquées |

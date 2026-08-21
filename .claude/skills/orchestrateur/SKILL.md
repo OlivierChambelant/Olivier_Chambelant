@@ -39,11 +39,30 @@ agents, préfère le plus spécialisé.
    (ex. `traducteur-en`, `analyste-donnees`).
 2. Crée `.claude/agents/<nom>.md` en suivant le format du registre :
    frontmatter YAML (`name`, `description` précisant QUAND l'utiliser,
-   `tools` limités au strict nécessaire), puis le prompt système de
-   l'agent : son rôle, sa méthode de travail, ses critères de qualité,
-   le format de sortie attendu. Rédige en français.
-3. Informe l'utilisateur qu'un nouvel agent a été recruté et pour quelle
-   spécialité.
+   `tools` limités au strict nécessaire, `model` choisi selon la grille
+   ROI ci-dessous), puis le prompt système de l'agent : son rôle, sa
+   méthode de travail, ses critères de qualité, le format de sortie
+   attendu. Rédige en français.
+3. Informe l'utilisateur qu'un nouvel agent a été recruté, pour quelle
+   spécialité et avec quel modèle.
+
+### 3 bis. Choisir le modèle (optimisation du ROI)
+
+Chaque délégation utilise le modèle le moins cher qui atteint le niveau
+de qualité requis — la grille complète est dans
+`.claude/agents/README.md` :
+
+- `haiku` (€) : extraction, lecture de PDF, résumé factuel, tri,
+  reformatage — tâches mécaniques ou volumineuses.
+- `sonnet` (€€) : défaut polyvalent — usage d'outils, recherche avec
+  jugement, rédaction courante, analyse standard.
+- `opus` (€€€) : raisonnement complexe ou livrable à fort enjeu et
+  faible volume — rédaction stratégique, arbitrages difficiles.
+
+En cas de doute, prends le moins cher ; ne monte en gamme que si le
+résultat est insuffisant. Un agent existant peut être surclassé
+ponctuellement (paramètre `model` de l'outil Agent) quand l'enjeu de la
+tâche dépasse son usage habituel — sans modifier son fichier.
 
 Note : un agent nouvellement créé n'est enregistré par Claude Code qu'au
 démarrage de session. Dans la session courante, lance la tâche via l'outil
@@ -56,6 +75,10 @@ suivantes, l'agent sera directement invocable par son nom.
 Lance la tâche avec l'outil Agent :
 - `subagent_type` : le nom de l'agent choisi (ou `general-purpose` avec le
   prompt de l'agent fraîchement embauché, cf. ci-dessus).
+- `model` : pour un agent enregistré, son frontmatter s'applique tout
+  seul — ne passe le paramètre que pour surclasser ponctuellement. Pour
+  un agent fraîchement embauché lancé via `general-purpose`, passe
+  explicitement le modèle choisi dans son frontmatter.
 - `prompt` : un brief complet et autonome — l'agent ne voit PAS la
   conversation. Inclus : le contexte, les chemins de fichiers exacts, le
   livrable attendu, les contraintes, et la consigne de rendre un rapport
@@ -82,4 +105,6 @@ Lance la tâche avec l'outil Agent :
 - Donne aux nouveaux agents le minimum d'outils nécessaire (principe du
   moindre privilège) : un agent de lecture/analyse n'a pas besoin de
   Write ni de Bash.
+- Optimise le ROI de chaque délégation : le bon modèle est le moins cher
+  qui fait le travail, pas le plus puissant disponible.
 - Réponds à l'utilisateur en français.
