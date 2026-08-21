@@ -40,12 +40,19 @@ Règles :
 ## Cycle de vie
 
 - **Embauche** : l'orchestrateur crée un nouveau fichier ici quand aucun
-  agent existant ne couvre la spécialité demandée. Les agents créés en
-  cours de session sont enregistrés au démarrage de la session suivante ;
-  entre-temps l'orchestrateur les exécute via `general-purpose`.
+  agent existant ne couvre la spécialité demandée, **ou quand un agent en
+  place n'est pas optimisé ou efficient** (mauvais modèle, outils
+  inadaptés, méthode insuffisante) et qu'un profil mieux calibré fait
+  mieux. Les agents créés en cours de session sont enregistrés au
+  démarrage de la session suivante ; entre-temps l'orchestrateur les
+  exécute via `general-purpose`.
 - **Évolution** : améliorer un agent = éditer son fichier (affiner la
-  description pour un meilleur routage, enrichir sa méthode).
-- **Départ** : supprimer le fichier d'un agent devenu inutile.
+  description pour un meilleur routage, recalibrer le modèle ou les
+  outils, enrichir sa méthode). À préférer au remplacement quand la
+  spécialité reste la bonne.
+- **Départ** : supprimer le fichier d'un agent devenu inutile ou rendu
+  redondant par une meilleure recrue, et mettre à jour le tableau
+  ci-dessous.
 
 ## Agents actuels
 
