@@ -1,0 +1,375 @@
+<title>Menus et courses de la semaine</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,800&family=Atkinson+Hyperlegible:wght@400;700&display=swap">
+<style>
+/* Layout: deux feuilles A4 portrait. Feuille 1 = grille jours x repas. Feuille 2 = liste de courses par rayon, cases à cocher. */
+:root {
+  --paper: #ffffff;
+  --desk: #eef1ee;
+  --ink: #1d2b26;
+  --muted: #5d6e67;
+  --line: #c9d3ce;
+  --tint: #f1f5f2;
+  --accent: #2f6b4f;
+  --display: "Bricolage Grotesque", "Arial Narrow", system-ui, sans-serif;
+  --body: "Atkinson Hyperlegible", "Segoe UI", system-ui, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --paper: #18211e; --desk: #0f1513; --ink: #e4ece8; --muted: #9db0a8;
+    --line: #34443e; --tint: #1f2a26; --accent: #7cc4a0; color-scheme: dark;
+  }
+}
+:root[data-theme="dark"] {
+  --paper: #18211e; --desk: #0f1513; --ink: #e4ece8; --muted: #9db0a8;
+  --line: #34443e; --tint: #1f2a26; --accent: #7cc4a0; color-scheme: dark;
+}
+
+* { box-sizing: border-box; }
+body {
+  background: var(--desk);
+  color: var(--ink);
+  font-family: var(--body);
+  font-size: 13px;
+  padding-block: 24px;
+  padding-inline: 16px;
+}
+.sheet {
+  background: var(--paper);
+  max-width: 210mm;
+  margin: 0 auto 24px;
+  padding: 11mm 11mm 9mm;
+  border: 1px solid var(--line);
+}
+header.top {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 4px 16px;
+  border-bottom: 2px solid var(--accent);
+  padding-bottom: 6px;
+  margin-bottom: 10px;
+}
+h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 26px;
+  letter-spacing: -0.01em;
+  margin: 0;
+  text-wrap: balance;
+}
+.meta { color: var(--muted); font-size: 11.5px; }
+.meta b { color: var(--ink); }
+
+/* Grille des menus */
+.scroll { overflow-x: auto; }
+table.menus {
+  width: 100%;
+  min-width: 640px;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+.menus th, .menus td {
+  border: 1px solid var(--line);
+  vertical-align: top;
+  text-align: left;
+}
+.menus thead th {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 11px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  background: var(--tint);
+  padding: 5px 6px;
+}
+.menus col.c-day { width: 9%; }
+.menus col.c-pdj { width: 21%; }
+.menus col.c-dej { width: 25%; }
+.menus col.c-col { width: 18%; }
+.menus col.c-din { width: 27%; }
+.menus tbody th {
+  background: var(--tint);
+  padding: 6px 4px;
+  text-align: center;
+  vertical-align: middle;
+}
+.day-n {
+  display: block;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 22px;
+  line-height: 1;
+  color: var(--accent);
+}
+.day-l {
+  display: block;
+  font-size: 9.5px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--muted);
+  margin-top: 2px;
+}
+.menus td { padding: 5px 6px 6px; font-size: 11px; line-height: 1.32; }
+.kcal {
+  display: inline-block;
+  font-size: 9.5px;
+  font-weight: 700;
+  color: var(--muted);
+  font-variant-numeric: tabular-nums;
+  margin-bottom: 2px;
+}
+.dish { font-weight: 700; display: block; }
+.menus ul { margin: 0; padding: 0; list-style: none; }
+.menus li { padding-left: 9px; position: relative; }
+.menus li::before { content: "·"; position: absolute; left: 1px; color: var(--accent); font-weight: 700; }
+.foot {
+  margin-top: 8px;
+  font-size: 10px;
+  color: var(--muted);
+  line-height: 1.4;
+}
+.foot b { color: var(--ink); }
+
+/* Liste de courses */
+.rayons {
+  columns: 2 240px;
+  column-gap: 9mm;
+}
+.rayon { break-inside: avoid; margin-bottom: 12px; }
+.rayon h2 {
+  font-family: var(--display);
+  font-weight: 600;
+  font-size: 13px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--accent);
+  margin: 0 0 4px;
+  padding-bottom: 3px;
+  border-bottom: 1px solid var(--line);
+}
+.rayon ul { list-style: none; margin: 0; padding: 0; }
+.rayon li {
+  display: grid;
+  grid-template-columns: 14px 1fr auto;
+  gap: 8px;
+  align-items: start;
+  padding: 2.5px 0;
+  border-bottom: 1px dotted var(--line);
+  font-size: 12px;
+  line-height: 1.3;
+}
+.box {
+  width: 12px; height: 12px;
+  border: 1.4px solid var(--ink);
+  border-radius: 2px;
+  margin-top: 1px;
+}
+.qty {
+  font-variant-numeric: tabular-nums;
+  font-weight: 700;
+  white-space: nowrap;
+  text-align: right;
+}
+.why { display: block; font-size: 10px; color: var(--muted); }
+li.stock { color: var(--muted); }
+li.stock .box { border-style: dashed; border-color: var(--muted); }
+.legend {
+  display: flex; flex-wrap: wrap; gap: 6px 18px;
+  font-size: 10.5px; color: var(--muted);
+  margin: -2px 0 10px;
+}
+.legend span { display: inline-flex; align-items: center; gap: 6px; }
+.legend .box { margin: 0; }
+.legend .box.dash { border-style: dashed; border-color: var(--muted); }
+.notes {
+  border: 1px solid var(--line);
+  padding: 6px 8px 4px;
+  margin-top: 4px;
+  min-height: 22mm;
+}
+.notes h2 { border: 0; margin-bottom: 0; }
+
+@page { size: A4 portrait; margin: 0; }
+@media print {
+  :root { --paper:#fff; --desk:#fff; --ink:#1d2b26; --muted:#5d6e67; --line:#c9d3ce; --tint:#f1f5f2; --accent:#2f6b4f; color-scheme: light; }
+  body { padding: 0; background: #fff; }
+  .sheet { border: 0; margin: 0; max-width: none; width: 210mm; height: 297mm; page-break-after: always; overflow: hidden; }
+  .sheet:last-child { page-break-after: auto; }
+  table.menus { min-width: 0; }
+  * { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+}
+</style>
+
+<!-- ============ FEUILLE 1 : MENUS ============ -->
+<section class="sheet" id="menus">
+  <header class="top">
+    <h1>Menus de la semaine</h1>
+    <div class="meta">Cible <b>~1 550 kcal/jour</b> · semaine du ____ / ____</div>
+  </header>
+
+  <div class="scroll">
+  <table class="menus">
+    <colgroup><col class="c-day"><col class="c-pdj"><col class="c-dej"><col class="c-col"><col class="c-din"></colgroup>
+    <thead>
+      <tr><th></th><th>Petit-déjeuner</th><th>Déjeuner</th><th>Collation</th><th>Dîner</th></tr>
+    </thead>
+    <tbody>
+      <tr>
+        <th><span class="day-n">1</span><span class="day-l">Jour</span></th>
+        <td><span class="kcal">~320 kcal</span><ul><li>Pain complet 60 g (2 tr.)</li><li>Beurre 10 g</li><li>1 yaourt nature</li><li>1 fruit</li></ul></td>
+        <td><span class="kcal">~470 kcal</span><ul><li>Cordon bleu 100 g</li><li>Riz thaï cuit, 3 c. à s.</li><li>Ratatouille 150 g</li><li>Fromage blanc vanille</li></ul></td>
+        <td><span class="kcal">~120 kcal</span><ul><li>1 pomme</li><li>10 amandes</li></ul></td>
+        <td><span class="kcal">~600 kcal</span><ul><li>Poulet 130 g</li><li>Pommes de terre au four 200 g</li><li>Haricots verts 200 g</li><li>Huile d'olive 10 g</li><li>1 yaourt nature</li></ul></td>
+      </tr>
+      <tr>
+        <th><span class="day-n">2</span><span class="day-l">Jour</span></th>
+        <td><span class="kcal">~330 kcal</span><ul><li>Flocons d'avoine 40 g</li><li>Fromage blanc 150 g</li><li>1 banane</li><li>Café ou thé sans sucre</li></ul></td>
+        <td><span class="kcal">~500 kcal</span><ul><li>Steak haché 5 % 100 g</li><li>Pommes de terre rôties 180 g</li><li>Salade verte + tomates</li><li>Huile d'olive 10 g</li><li>1 fruit</li></ul></td>
+        <td><span class="kcal">~100 kcal</span><ul><li>1 fromage blanc nature</li></ul></td>
+        <td><span class="kcal">~600 kcal</span><span class="dish">Omelette</span><ul><li>2 œufs + jambon 100 g</li><li>Champignons, courgettes à volonté</li><li>Pain 50 g</li><li>Fromage 30 g</li><li>1 fruit</li></ul></td>
+      </tr>
+      <tr>
+        <th><span class="day-n">3</span><span class="day-l">Jour</span></th>
+        <td><span class="kcal">~320 kcal</span><ul><li>Pain complet 60 g (2 tart.)</li><li>Fromage frais 20 g</li><li>1 œuf</li><li>1 fruit</li></ul></td>
+        <td><span class="kcal">~500 kcal</span><ul><li>Poulet 120 g</li><li>Riz cuit 100 g</li><li>Légumes 200 g</li><li>1 c. à café d'huile</li><li>1 fromage blanc</li></ul></td>
+        <td><span class="kcal">~120 kcal</span><ul><li>1 fruit</li><li>10 amandes</li></ul></td>
+        <td><span class="kcal">~580 kcal</span><ul><li>Cabillaud 150 g</li><li>Pommes de terre 200 g</li><li>Ratatouille 200 g</li><li>Huile d'olive 10 g</li><li>1 yaourt</li></ul></td>
+      </tr>
+      <tr>
+        <th><span class="day-n">4</span><span class="day-l">Jour</span></th>
+        <td><span class="kcal">~330 kcal</span><ul><li>Fromage blanc 150 g</li><li>Muesli 40 g</li><li>1 pomme</li><li>Café / thé</li></ul></td>
+        <td><span class="kcal">~500 kcal</span><span class="dish">Wrap poulet</span><ul><li>1 tortilla + poulet 120 g</li><li>Salade, tomate, concombre</li><li>Fromage frais 30 g</li><li>1 fruit</li></ul></td>
+        <td><span class="kcal">~100 kcal</span><ul><li>1 yaourt</li></ul></td>
+        <td><span class="kcal">~600 kcal</span><span class="dish">Pâtes bolognaise</span><ul><li>Pâtes 60 g crues</li><li>Steak haché 5 % 100 g</li><li>Sauce tomate 150 g</li><li>Courgettes ou champignons</li><li>Parmesan 10 g + salade</li></ul></td>
+      </tr>
+      <tr>
+        <th><span class="day-n">5</span><span class="day-l">Jour</span></th>
+        <td><span class="kcal">~320 kcal</span><ul><li>2 œufs</li><li>Pain complet 50 g</li><li>1 fruit</li><li>Café / thé</li></ul></td>
+        <td><span class="kcal">~500 kcal</span><ul><li>Saumon 120 g</li><li>Pommes de terre 150 g</li><li>Haricots verts 200 g</li><li>1 yaourt</li></ul></td>
+        <td><span class="kcal">~120 kcal</span><ul><li>Fromage blanc</li><li>Quelques fruits rouges</li></ul></td>
+        <td><span class="kcal">~600 kcal</span><span class="dish">Chili</span><ul><li>Bœuf 5 % 100 g</li><li>Haricots rouges 100 g</li><li>Tomates concassées, poivrons, oignons</li><li>Riz cuit 100 g + salade</li></ul></td>
+      </tr>
+      <tr>
+        <th><span class="day-n">6</span><span class="day-l">Jour</span></th>
+        <td><span class="kcal">~330 kcal</span><ul><li>Flocons d'avoine 40 g</li><li>Fromage blanc 150 g</li><li>1 banane</li></ul></td>
+        <td><span class="kcal">~480 kcal</span><ul><li>2 œufs</li><li>Pommes de terre 150 g</li><li>Ratatouille 200 g</li><li>Pain 30 g</li><li>1 yaourt</li></ul></td>
+        <td><span class="kcal">~120 kcal</span><ul><li>1 fruit</li><li>10 amandes</li></ul></td>
+        <td><span class="kcal">~600 kcal</span><span class="dish">Poulet curry</span><ul><li>Poulet 130 g</li><li>Légumes à volonté</li><li>Riz cuit 100 g</li><li>Lait de coco léger 50 ml</li><li>1 fromage blanc</li></ul></td>
+      </tr>
+      <tr>
+        <th><span class="day-n">7</span><span class="day-l">Jour</span></th>
+        <td><span class="kcal">~330 kcal</span><ul><li>Pain complet, 2 tranches</li><li>Beurre de cacahuète 20 g</li><li>1 banane</li><li>Café / thé</li></ul></td>
+        <td><span class="kcal">~500 kcal</span><ul><li>Poulet rôti 130 g</li><li>Pommes de terre 180 g</li><li>Haricots verts ou carottes 200 g</li><li>1 yaourt</li></ul></td>
+        <td><span class="kcal">~100 kcal</span><ul><li>1 fruit</li></ul></td>
+        <td><span class="kcal">~600 kcal</span><span class="dish">Pizza tortilla</span><ul><li>1 tortilla + sauce tomate</li><li>Jambon 80 g, mozzarella 50 g</li><li>Champignons, tomates, poivrons</li><li>Salade verte</li><li>1 fromage blanc</li></ul></td>
+      </tr>
+    </tbody>
+  </table>
+  </div>
+
+  <p class="foot"><b>À savoir.</b> Les kcal sont celles du plan d'origine. Elles ne comptent pas l'huile de cuisson ni l'assaisonnement des salades. Le total réel est probablement plus proche de 1 600 à 1 700 kcal/jour. Pèse la viande toujours de la même façon (crue ou cuite) et choisis un fromage blanc au même taux de matière grasse toute la semaine.</p>
+</section>
+
+<!-- ============ FEUILLE 2 : COURSES ============ -->
+<section class="sheet" id="courses">
+  <header class="top">
+    <h1>Liste de courses</h1>
+    <div class="meta">Quantités pour <b>7 jours</b>, 1 personne</div>
+  </header>
+  <div class="legend">
+    <span><i class="box"></i> à acheter</span>
+    <span><i class="box dash"></i> souvent déjà au placard, à vérifier avant</span>
+  </div>
+
+  <div class="rayons">
+    <div class="rayon">
+      <h2>Viandes, poissons, œufs</h2>
+      <ul>
+        <li><i class="box"></i><span>Blanc de poulet<span class="why">J1, J3, J4, J6, J7</span></span><span class="qty">630 g</span></li>
+        <li><i class="box"></i><span>Bœuf haché 5 %<span class="why">3 steaks : J2, J4, J5</span></span><span class="qty">300 g</span></li>
+        <li><i class="box"></i><span>Cordon bleu<span class="why">J1</span></span><span class="qty">1</span></li>
+        <li><i class="box"></i><span>Jambon blanc<span class="why">J2, J7 · env. 4 tranches</span></span><span class="qty">180 g</span></li>
+        <li><i class="box"></i><span>Pavé de saumon<span class="why">J5</span></span><span class="qty">120 g</span></li>
+        <li><i class="box"></i><span>Dos de cabillaud<span class="why">J3</span></span><span class="qty">150 g</span></li>
+        <li><i class="box"></i><span>Œufs<span class="why">J2, J3, J5, J6</span></span><span class="qty">7</span></li>
+      </ul>
+    </div>
+
+    <div class="rayon">
+      <h2>Crèmerie</h2>
+      <ul>
+        <li><i class="box"></i><span>Fromage blanc nature<span class="why">3 × 150 g + 5 pots</span></span><span class="qty">~1 kg</span></li>
+        <li><i class="box"></i><span>Fromage blanc vanille<span class="why">J1</span></span><span class="qty">1 pot</span></li>
+        <li><i class="box"></i><span>Yaourts nature</span><span class="qty">7</span></li>
+        <li><i class="box"></i><span>Fromage frais à tartiner<span class="why">J3, J4</span></span><span class="qty">50 g</span></li>
+        <li><i class="box"></i><span>Mozzarella<span class="why">J7</span></span><span class="qty">1 boule</span></li>
+        <li><i class="box"></i><span>Fromage râpé ou emmental<span class="why">J2</span></span><span class="qty">30 g</span></li>
+        <li class="stock"><i class="box"></i><span>Parmesan<span class="why">J4</span></span><span class="qty">10 g</span></li>
+        <li class="stock"><i class="box"></i><span>Beurre<span class="why">J1</span></span><span class="qty">10 g</span></li>
+      </ul>
+    </div>
+
+    <div class="rayon">
+      <h2>Fruits</h2>
+      <ul>
+        <li><i class="box"></i><span>Fruits de saison au choix</span><span class="qty">9</span></li>
+        <li><i class="box"></i><span>Bananes<span class="why">J2, J6, J7</span></span><span class="qty">3</span></li>
+        <li><i class="box"></i><span>Pommes<span class="why">J1, J4</span></span><span class="qty">2</span></li>
+        <li><i class="box"></i><span>Fruits rouges (surgelés OK)<span class="why">J5</span></span><span class="qty">100 g</span></li>
+      </ul>
+    </div>
+
+    <div class="rayon">
+      <h2>Légumes</h2>
+      <ul>
+        <li><i class="box"></i><span>Pommes de terre</span><span class="qty">1,1 kg</span></li>
+        <li><i class="box"></i><span>Haricots verts (surgelés OK)<span class="why">J1, J5, J7</span></span><span class="qty">600 g</span></li>
+        <li><i class="box"></i><span>Ratatouille (bocal ou maison)<span class="why">J1, J3, J6</span></span><span class="qty">550 g</span></li>
+        <li><i class="box"></i><span>Poêlée de légumes au choix<span class="why">J3, J6</span></span><span class="qty">~500 g</span></li>
+        <li><i class="box"></i><span>Courgettes</span><span class="qty">2</span></li>
+        <li><i class="box"></i><span>Champignons</span><span class="qty">250 g</span></li>
+        <li><i class="box"></i><span>Tomates</span><span class="qty">4</span></li>
+        <li><i class="box"></i><span>Salade verte</span><span class="qty">2</span></li>
+        <li><i class="box"></i><span>Poivrons<span class="why">J5, J7</span></span><span class="qty">2</span></li>
+        <li><i class="box"></i><span>Concombre</span><span class="qty">1</span></li>
+        <li><i class="box"></i><span>Oignons</span><span class="qty">2</span></li>
+        <li><i class="box"></i><span>Carottes (option J7)</span><span class="qty">2</span></li>
+      </ul>
+    </div>
+
+    <div class="rayon">
+      <h2>Pain, féculents</h2>
+      <ul>
+        <li><i class="box"></i><span>Pain complet<span class="why">~310 g sur la semaine</span></span><span class="qty">1 pain</span></li>
+        <li><i class="box"></i><span>Tortillas<span class="why">J4, J7</span></span><span class="qty">2</span></li>
+        <li class="stock"><i class="box"></i><span>Riz<span class="why">~360 g une fois cuit</span></span><span class="qty">~130 g cru</span></li>
+        <li class="stock"><i class="box"></i><span>Pâtes</span><span class="qty">60 g</span></li>
+        <li class="stock"><i class="box"></i><span>Flocons d'avoine</span><span class="qty">80 g</span></li>
+        <li><i class="box"></i><span>Muesli</span><span class="qty">40 g</span></li>
+      </ul>
+    </div>
+
+    <div class="rayon">
+      <h2>Épicerie</h2>
+      <ul>
+        <li><i class="box"></i><span>Tomates concassées<span class="why">J5</span></span><span class="qty">1 boîte</span></li>
+        <li><i class="box"></i><span>Haricots rouges<span class="why">100 g égouttés</span></span><span class="qty">1 petite boîte</span></li>
+        <li><i class="box"></i><span>Sauce tomate<span class="why">J4, J7</span></span><span class="qty">1 bocal</span></li>
+        <li><i class="box"></i><span>Lait de coco léger<span class="why">50 ml</span></span><span class="qty">1 petite brique</span></li>
+        <li><i class="box"></i><span>Amandes<span class="why">30 amandes</span></span><span class="qty">40 g</span></li>
+        <li class="stock"><i class="box"></i><span>Beurre de cacahuète</span><span class="qty">20 g</span></li>
+        <li class="stock"><i class="box"></i><span>Huile d'olive</span><span class="qty">1 bouteille</span></li>
+        <li class="stock"><i class="box"></i><span>Curry, épices</span><span class="qty"></span></li>
+        <li class="stock"><i class="box"></i><span>Café, thé</span><span class="qty"></span></li>
+      </ul>
+    </div>
+
+    <div class="rayon notes">
+      <h2>À ajouter</h2>
+    </div>
+  </div>
+</section>
