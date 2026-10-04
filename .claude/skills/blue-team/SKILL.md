@@ -1,8 +1,8 @@
 ---
 name: blue-team
-description: Cellule Blue Team. Part d'un rapport du skill red-team et produit, pour chaque faille fatale ou sérieuse (6 au plus), la meilleure parade disponible avec les raisons du rejet des autres. Lance 5 sous-agents isolés couvrant le spectre ÉPROUVÉ, PRAGMATIQUE, SYSTÉMIQUE, CRÉATIF, WTF, puis une extraction de noyau, une vérification des faits, une grille pondérée fixée à l'avance et une contre-passe unique. Historise dans le vault Obsidian Coffre-fort. À utiliser quand l'utilisateur ou un agent demande des parades, des solutions ou une réponse aux failles trouvées par la Red Team, ou met à jour le statut d'une solution historisée (« j'applique », « je ne l'applique pas », « résultat observé »).
+description: Cellule Blue Team. Part d'un rapport du skill red-team et produit, pour chaque faille fatale ou sérieuse (6 au plus), la meilleure parade disponible avec les raisons du rejet des autres. Lance 5 sous-agents isolés couvrant le spectre ÉPROUVÉ, PRAGMATIQUE, SYSTÉMIQUE, CRÉATIF, WTF, puis une extraction de noyau, une vérification des faits, une grille pondérée fixée à l'avance et une contre-passe unique. Historise dans le vault Obsidian Coffre-fort via le MCP obsidian-vault. À utiliser quand l'utilisateur ou un agent demande des parades, des solutions ou une réponse aux failles trouvées par la Red Team, ou met à jour le statut d'une solution historisée (« j'applique », « je ne l'applique pas », « résultat observé »).
 argument-hint: "[rapport Red Team + plan d'origine + objectif]"
-allowed-tools: Agent WebSearch WebFetch Read Write Edit Glob Grep
+allowed-tools: Agent WebSearch WebFetch Read Write ToolSearch mcp__obsidian-vault__search_notes mcp__obsidian-vault__read_note mcp__obsidian-vault__read_multiple_notes mcp__obsidian-vault__list_directory mcp__obsidian-vault__write_note mcp__obsidian-vault__update_frontmatter mcp__obsidian-vault__patch_note
 ---
 
 # Cellule Blue Team
@@ -30,7 +30,7 @@ Entrée : $ARGUMENTS. Si c'est vide, l'entrée est le rapport Red Team et le pla
 9. Évaluation sur la grille.
 10. Contre-passe unique : [references/extraction-et-contre-passe.md](references/extraction-et-contre-passe.md).
 11. Rapport : [references/format-rapport.md](references/format-rapport.md).
-12. Sauvegarde de l'exécution, puis historisation dans le vault.
+12. Sauvegarde de l'exécution, puis historisation dans le vault par le MCP `obsidian-vault` : [references/vault.md](references/vault.md) section ÉCRITURE.
 
 ## Appel par un autre agent
 
