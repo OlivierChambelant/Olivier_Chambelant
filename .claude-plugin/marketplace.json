@@ -1,0 +1,14 @@
+{
+  "name": "olivier-chambelant",
+  "description": "Plugins personnels d'Olivier Chambelant",
+  "owner": {
+    "name": "Olivier Chambelant"
+  },
+  "plugins": [
+    {
+      "name": "cellule",
+      "source": "./plugins/cellule",
+      "description": "Cellules Red Team et Blue Team pour attaquer un plan ou une décision, puis trouver les parades."
+    }
+  ]
+}

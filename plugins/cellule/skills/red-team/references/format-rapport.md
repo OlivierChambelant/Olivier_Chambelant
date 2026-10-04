@@ -1,6 +1,6 @@
 # Format du rapport Red Team
 
-Le rapport suit exactement cette structure. C'est aussi le contrat d'entrée du skill blue-team. Ne change ni les titres ni les champs.
+Le rapport suit exactement cette structure. C'est aussi le contrat d'entrée de `/cellule:blue-team`. Ne change ni les titres ni les champs.
 
 1. ÉQUIPE : une ligne par sous-agent, méthode et spécialité.
 2. ÉTAT DU PLAN : une phrase. Trois valeurs possibles : tient, fragile, ne tient pas. Suivie de la raison principale. Si plusieurs options sont attaquées, un état par option, sans classement entre elles. Si l'horizon n'a pas été fourni, précise que la plausibilité a été testée sur 12 mois.

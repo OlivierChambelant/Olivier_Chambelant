@@ -1,6 +1,6 @@
 # Protocole du vault, commun aux cellules Red Team et Blue Team
 
-Le vault Obsidian « Coffre-fort » est la mémoire des deux cellules. Un modèle n'apprend rien d'une exécution à l'autre. Seul ce qui est écrit puis relu se capitalise. Ce fichier est lu par les skills red-team et blue-team.
+Le vault Obsidian « Coffre-fort » est la mémoire des deux cellules. Un modèle n'apprend rien d'une exécution à l'autre. Seul ce qui est écrit puis relu se capitalise. Ce fichier est lu par les skills `/cellule:red-team` et `/cellule:blue-team` du plugin cellule.
 
 ## Outil
 

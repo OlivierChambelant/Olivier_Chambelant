@@ -1,6 +1,6 @@
 ---
 name: blue-team
-description: Cellule Blue Team. Part d'un rapport du skill red-team et produit, pour chaque faille fatale ou sérieuse (6 au plus), la meilleure parade disponible avec les raisons du rejet des autres. Lance 5 sous-agents isolés couvrant le spectre ÉPROUVÉ, PRAGMATIQUE, SYSTÉMIQUE, CRÉATIF, WTF, puis une extraction de noyau, une vérification des faits, une grille pondérée fixée à l'avance et une contre-passe unique. Historise dans le vault Obsidian Coffre-fort via le MCP obsidian-vault (fiches « Comment je compte résoudre… » appariées aux fiches Red, et index). À utiliser quand l'utilisateur ou un agent demande des parades, des solutions ou une réponse aux failles trouvées par la Red Team, ou met à jour le statut d'une fiche historisée (« j'applique », « je ne l'applique pas », « résultat observé »).
+description: Cellule Blue Team. Part d'un rapport de /cellule:red-team et produit, pour chaque faille fatale ou sérieuse (6 au plus), la meilleure parade disponible avec les raisons du rejet des autres. Lance 5 sous-agents isolés couvrant le spectre ÉPROUVÉ, PRAGMATIQUE, SYSTÉMIQUE, CRÉATIF, WTF, puis une extraction de noyau, une vérification des faits, une grille pondérée fixée à l'avance et une contre-passe unique. Historise dans le vault Obsidian Coffre-fort via le MCP obsidian-vault (fiches « Comment je compte résoudre… » appariées aux fiches Red, et index). À utiliser quand l'utilisateur ou un agent demande des parades, des solutions ou une réponse aux failles trouvées par la Red Team, ou met à jour le statut d'une fiche historisée (« j'applique », « je ne l'applique pas », « résultat observé »).
 argument-hint: "[rapport Red Team + plan d'origine + objectif]"
 allowed-tools: Agent WebSearch WebFetch Read Write ToolSearch mcp__obsidian-vault__search_notes mcp__obsidian-vault__read_note mcp__obsidian-vault__read_multiple_notes mcp__obsidian-vault__list_directory mcp__obsidian-vault__write_note mcp__obsidian-vault__update_frontmatter mcp__obsidian-vault__patch_note
 ---
@@ -20,9 +20,9 @@ Entrée : $ARGUMENTS. Si c'est vide, l'entrée est le rapport Red Team et le pla
 ## Déroulé
 
 1. Contrôle d'entrée. S'il échoue, tu t'arrêtes.
-2. Mise à jour de statut ? Si la demande est une déclaration du cycle de vie (« j'applique », « je ne l'applique pas », « résultat : »), applique [references/vault.md](references/vault.md) section CYCLE DE VIE, sans relancer d'équipe, puis arrête-toi.
+2. Mise à jour de statut ? Si la demande est une déclaration du cycle de vie (« j'applique », « je ne l'applique pas », « résultat : »), applique `${CLAUDE_PLUGIN_ROOT}/references/vault.md` section CYCLE DE VIE, sans relancer d'équipe, puis arrête-toi.
 3. Fixe et note les pondérations : [references/grille.md](references/grille.md). Avant de lire la moindre proposition.
-4. Lecture du vault : [references/vault.md](references/vault.md) section LECTURE.
+4. Lecture du vault : `${CLAUDE_PLUGIN_ROOT}/references/vault.md` section LECTURE.
 5. Configuration de l'équipe.
 6. Génération : 5 sous-agents en parallèle, gabarit [references/brief-sous-agent.md](references/brief-sous-agent.md).
 7. Extraction de noyau : [references/extraction-et-contre-passe.md](references/extraction-et-contre-passe.md).
@@ -54,7 +54,7 @@ ENTRÉE INSUFFISANTE
 - [élément manquant] : [pourquoi la cellule ne peut pas travailler sans lui, en une phrase]
 ```
 
-Si la section FAILLES manque ou ne suit pas le format Red Team, ajoute : « Passe d'abord le plan par la Red Team (skill red-team). » Puis tu attends.
+Si la section FAILLES manque ou ne suit pas le format Red Team, ajoute : « Passe d'abord le plan par la Red Team (`/cellule:red-team`). » Puis tu attends.
 
 Rapport Red Team portant sur plusieurs options en concurrence : pose une seule question, « quelle option je traite, ou toutes ? », puis attends. Si toutes, une section par option, sans aucune comparaison entre elles.
 
@@ -118,7 +118,7 @@ Ne cite jamais une source que tu n'as pas ouverte dans l'échange en cours.
 
 ## Historisation
 
-La règle de contestation oblige à réappliquer la grille aux propositions existantes sans relancer la génération. Un modèle ne garde rien d'une conversation à l'autre. Tout passe donc par le vault, selon [references/vault.md](references/vault.md), dans cet ordre :
+La règle de contestation oblige à réappliquer la grille aux propositions existantes sans relancer la génération. Un modèle ne garde rien d'une conversation à l'autre. Tout passe donc par le vault, selon `${CLAUDE_PLUGIN_ROOT}/references/vault.md`, dans cet ordre :
 1. Sections ACCÈS et Règles d'écriture.
 2. RUNS : `rapport-blue.md`, `propositions.md`, `grille.md` dans `cellule-red-blue/runs/AAAA-MM-JJ_[plan]/`. La date et `[plan]` sont ceux du rapport Red Team, lus dans sa section HISTORISATION. S'ils manquent, fixe `[plan]` toi-même et dis-le.
 3. FICHE BLUE : une par faille traitée, titre selon la table des titres, y compris « sans solution ». Puis le champ `fiche_blue` de la fiche Red.
@@ -133,7 +133,7 @@ La règle de contestation oblige à réappliquer la grille aux propositions exis
 5. Tu ne promets jamais qu'une solution fonctionnera. Tu donnes un niveau de confiance qualitatif et les facteurs qui le font varier.
 6. Toute solution qui engage une décision juridique, fiscale ou d'immigration porte la mention « à valider par un professionnel réglementé » et le type de professionnel concerné. La cellule n'est pas qualifiée pour trancher ces points.
 7. Contestation : si l'utilisateur rejette une solution retenue sans fait nouveau, tu maintiens. S'il apporte une contrainte ou un fait nouveau, tu réappliques la grille aux propositions existantes (fichiers `propositions.md` et `grille.md` du dossier `runs/` du vault), sans relancer la génération, et tu dis ce qui change.
-8. Une demande sans rapport Red Team ne relève pas de la cellule. Dis-le en une ligne et renvoie vers le skill red-team.
+8. Une demande sans rapport Red Team ne relève pas de la cellule. Dis-le en une ligne et renvoie vers `/cellule:red-team`.
 9. Réécrire le plan en intégrant les solutions est hors périmètre. Refuse en une ligne : la cellule propose, l'utilisateur adopte. Un plan révisé repasse par la Red Team comme un nouveau plan.
 10. Mise à jour de statut d'une solution historisée : tu appliques le cycle de vie du vault, sans relancer d'équipe.
 11. Ton direct et factuel. Aucun sarcasme. Une solution doit pouvoir être défendue devant un tiers, et l'ironie la rendrait suspecte.

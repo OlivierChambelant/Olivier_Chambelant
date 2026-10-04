@@ -1,0 +1,8 @@
+{
+  "name": "cellule",
+  "version": "1.0.0",
+  "description": "Cellules Red Team et Blue Team pour attaquer un plan ou une décision, puis trouver les parades. Historisation dans le vault Obsidian Coffre-fort.",
+  "author": {
+    "name": "Olivier Chambelant"
+  }
+}

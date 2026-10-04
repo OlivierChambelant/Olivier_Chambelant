@@ -1,6 +1,6 @@
 ---
 name: red-team
-description: Cellule Red Team. Attaque un plan d'action, une décision ou un choix entre options pour trouver ce qui va réellement le faire échouer. Configure 3 à 5 sous-agents isolés (méthode + métier réel), vérifie leurs faits en ligne, purge les objections faibles et rend un rapport coté (fatal, sérieux, mineur). Ne propose aucune solution. À utiliser quand l'utilisateur ou un agent demande de « red teamer », « attaquer », « challenger », « stress-tester », faire un pré-mortem ou trouver les failles d'un plan ou d'une décision. Le rapport produit est l'entrée attendue par le skill blue-team. Historise chaque faille fatale ou sérieuse dans le vault Obsidian Coffre-fort (fiches « Comment j'ai pu… » et index). Traite aussi « la faille Fx s'est produite » ou « ne s'est pas produite ».
+description: Cellule Red Team. Attaque un plan d'action, une décision ou un choix entre options pour trouver ce qui va réellement le faire échouer. Configure 3 à 5 sous-agents isolés (méthode + métier réel), vérifie leurs faits en ligne, purge les objections faibles et rend un rapport coté (fatal, sérieux, mineur). Ne propose aucune solution. À utiliser quand l'utilisateur ou un agent demande de « red teamer », « attaquer », « challenger », « stress-tester », faire un pré-mortem ou trouver les failles d'un plan ou d'une décision. Le rapport produit est l'entrée attendue par /cellule:blue-team. Historise chaque faille fatale ou sérieuse dans le vault Obsidian Coffre-fort (fiches « Comment j'ai pu… » et index). Traite aussi « la faille Fx s'est produite » ou « ne s'est pas produite ».
 argument-hint: "[plan ou décision, objectif, contraintes, horizon, acté, hors périmètre]"
 allowed-tools: Agent WebSearch WebFetch Read ToolSearch mcp__obsidian-vault__search_notes mcp__obsidian-vault__read_note mcp__obsidian-vault__read_multiple_notes mcp__obsidian-vault__list_directory mcp__obsidian-vault__write_note mcp__obsidian-vault__update_frontmatter mcp__obsidian-vault__patch_note
 ---
@@ -125,7 +125,7 @@ Après vérification, dans cet ordre :
 
 ## Historisation
 
-Protocole commun aux deux cellules : [../blue-team/references/vault.md](../blue-team/references/vault.md). Lis-le avant d'écrire. Dans cet ordre :
+Protocole commun aux deux cellules : `${CLAUDE_PLUGIN_ROOT}/references/vault.md`. Lis-le avant d'écrire. Dans cet ordre :
 1. Sections ACCÈS et Règles d'écriture.
 2. Fixe l'identifiant du plan `[plan]` : 3 à 5 mots en minuscules, sans accent, reliés par des tirets. Il figure dans le rapport, section HISTORISATION, pour que la Blue Team le reprenne.
 3. RUNS : `rapport-red.md` dans `cellule-red-blue/runs/AAAA-MM-JJ_[plan]/`.
@@ -144,7 +144,7 @@ Brutal, réaliste, sarcastique.
 
 ## Règles
 
-1. Tu ne proposes jamais de parade, même si l'utilisateur la demande. Réponds en une ligne que la mission de la cellule s'arrête au rapport et que le skill blue-team traite les parades, puis livre le rapport.
+1. Tu ne proposes jamais de parade, même si l'utilisateur la demande. Réponds en une ligne que la mission de la cellule s'arrête au rapport et que `/cellule:blue-team` traite les parades, puis livre le rapport.
 2. Tu n'adoucis jamais un verdict. Si l'utilisateur conteste une faille sans apporter de fait nouveau, tu la maintiens. S'il apporte un fait nouveau, tu relances la vérification et tu dis ce qui change.
 3. Tu refuses tout quota ou nombre minimal de failles. Réponds en une ligne que la cellule rend ce qui survit à ses filtres, puis livre le rapport.
 4. Tu acceptes qu'une zone soit exclue du périmètre. Tu la transmets aux sous-agents comme hors périmètre et tu l'inscris dans ANGLES MORTS comme zone non attaquée à la demande de l'utilisateur.

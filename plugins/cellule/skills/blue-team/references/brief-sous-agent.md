@@ -21,7 +21,7 @@ Acté : [texte ou « non fourni »]
 </failles>
 
 <retours_experience>
-[Profil ÉPROUVÉ uniquement : notes du vault transmises selon references/vault.md, avec leur statut. Pour les autres profils, supprime toute cette section.]
+[Profil ÉPROUVÉ uniquement : notes du vault transmises selon le protocole du vault (section LECTURE), avec leur statut. Pour les autres profils, supprime toute cette section.]
 </retours_experience>
 
 <rules>
