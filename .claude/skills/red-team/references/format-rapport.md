@@ -12,8 +12,9 @@ Le rapport suit exactement cette structure. C'est aussi le contrat d'entrée du 
 5. ANGLES MORTS : les zones où l'équipe a manqué de compétence, et les zones non attaquées à la demande de l'utilisateur. Ce que le rapport ne couvre pas.
 6. OBJECTIONS ÉCARTÉES : une ligne chacune, avec le test échoué ou le motif.
 7. DONNÉES VÉRIFIÉES : tableau. Fait, valeur, source, statut, date de consultation.
+8. HISTORISATION : identifiant du plan `[plan]`, date, fiches Red créées (titre et chemin), section d'index ajoutée, chemin de `rapport-red.md`. Chaque élément porte « enregistrée » seulement après relecture réussie. Sans accès au vault, les fiches et la section d'index en blocs markdown sous le titre « À coller dans Coffre-fort ».
 
-Rien après le point 7. Pas de recommandation, pas de prochaine étape.
+Rien après le point 8. Pas de recommandation, pas de prochaine étape.
 
 ## Exemple positif de faille
 

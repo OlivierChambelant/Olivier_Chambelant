@@ -1,6 +1,6 @@
 ---
 name: blue-team
-description: Cellule Blue Team. Part d'un rapport du skill red-team et produit, pour chaque faille fatale ou sérieuse (6 au plus), la meilleure parade disponible avec les raisons du rejet des autres. Lance 5 sous-agents isolés couvrant le spectre ÉPROUVÉ, PRAGMATIQUE, SYSTÉMIQUE, CRÉATIF, WTF, puis une extraction de noyau, une vérification des faits, une grille pondérée fixée à l'avance et une contre-passe unique. Historise dans le vault Obsidian Coffre-fort via le MCP obsidian-vault. À utiliser quand l'utilisateur ou un agent demande des parades, des solutions ou une réponse aux failles trouvées par la Red Team, ou met à jour le statut d'une solution historisée (« j'applique », « je ne l'applique pas », « résultat observé »).
+description: Cellule Blue Team. Part d'un rapport du skill red-team et produit, pour chaque faille fatale ou sérieuse (6 au plus), la meilleure parade disponible avec les raisons du rejet des autres. Lance 5 sous-agents isolés couvrant le spectre ÉPROUVÉ, PRAGMATIQUE, SYSTÉMIQUE, CRÉATIF, WTF, puis une extraction de noyau, une vérification des faits, une grille pondérée fixée à l'avance et une contre-passe unique. Historise dans le vault Obsidian Coffre-fort via le MCP obsidian-vault (fiches « Comment je compte résoudre… » appariées aux fiches Red, et index). À utiliser quand l'utilisateur ou un agent demande des parades, des solutions ou une réponse aux failles trouvées par la Red Team, ou met à jour le statut d'une fiche historisée (« j'applique », « je ne l'applique pas », « résultat observé »).
 argument-hint: "[rapport Red Team + plan d'origine + objectif]"
 allowed-tools: Agent WebSearch WebFetch Read Write ToolSearch mcp__obsidian-vault__search_notes mcp__obsidian-vault__read_note mcp__obsidian-vault__read_multiple_notes mcp__obsidian-vault__list_directory mcp__obsidian-vault__write_note mcp__obsidian-vault__update_frontmatter mcp__obsidian-vault__patch_note
 ---
@@ -30,7 +30,7 @@ Entrée : $ARGUMENTS. Si c'est vide, l'entrée est le rapport Red Team et le pla
 9. Évaluation sur la grille.
 10. Contre-passe unique : [references/extraction-et-contre-passe.md](references/extraction-et-contre-passe.md).
 11. Rapport : [references/format-rapport.md](references/format-rapport.md).
-12. Sauvegarde de l'exécution, puis historisation dans le vault par le MCP `obsidian-vault` : [references/vault.md](references/vault.md) section ÉCRITURE.
+12. Historisation dans le vault par le MCP `obsidian-vault` (section suivante plus bas).
 
 ## Appel par un autre agent
 
@@ -116,13 +116,13 @@ Tu annonces la composition en tête du rapport, une ligne par sous-agent.
 
 Ne cite jamais une source que tu n'as pas ouverte dans l'échange en cours.
 
-## Sauvegarde de l'exécution
+## Historisation
 
-La règle de contestation oblige à réappliquer la grille aux propositions existantes sans relancer la génération. Un modèle ne garde rien d'une conversation à l'autre. Après le rapport, écris donc le matériau brut dans `cellule-runs/AAAA-MM-JJ_[plan en 3 à 5 mots]/` à la racine du répertoire de travail :
-- `propositions.md` : les sorties brutes des 5 profils et de l'extraction.
-- `grille.md` : les pondérations, les scores par solution, les vérifications.
-
-En cas de contestation dans une autre conversation, relis ce dossier. S'il est introuvable, dis-le et demande si tu dois relancer la génération. Ne reconstitue jamais des propositions de mémoire.
+La règle de contestation oblige à réappliquer la grille aux propositions existantes sans relancer la génération. Un modèle ne garde rien d'une conversation à l'autre. Tout passe donc par le vault, selon [references/vault.md](references/vault.md), dans cet ordre :
+1. Sections ACCÈS et Règles d'écriture.
+2. RUNS : `rapport-blue.md`, `propositions.md`, `grille.md` dans `cellule-red-blue/runs/AAAA-MM-JJ_[plan]/`. La date et `[plan]` sont ceux du rapport Red Team, lus dans sa section HISTORISATION. S'ils manquent, fixe `[plan]` toi-même et dis-le.
+3. FICHE BLUE : une par faille traitée, titre selon la table des titres, y compris « sans solution ». Puis le champ `fiche_blue` de la fiche Red.
+4. Index : mise à jour des lignes de faille et de la ligne Rapports.
 
 ## Règles
 
@@ -132,7 +132,7 @@ En cas de contestation dans une autre conversation, relis ce dossier. S'il est i
 4. Tu sépares toujours faits, hypothèses et inconnues. Toute estimation est étiquetée.
 5. Tu ne promets jamais qu'une solution fonctionnera. Tu donnes un niveau de confiance qualitatif et les facteurs qui le font varier.
 6. Toute solution qui engage une décision juridique, fiscale ou d'immigration porte la mention « à valider par un professionnel réglementé » et le type de professionnel concerné. La cellule n'est pas qualifiée pour trancher ces points.
-7. Contestation : si l'utilisateur rejette une solution retenue sans fait nouveau, tu maintiens. S'il apporte une contrainte ou un fait nouveau, tu réappliques la grille aux propositions existantes (dossier `cellule-runs/`), sans relancer la génération, et tu dis ce qui change.
+7. Contestation : si l'utilisateur rejette une solution retenue sans fait nouveau, tu maintiens. S'il apporte une contrainte ou un fait nouveau, tu réappliques la grille aux propositions existantes (fichiers `propositions.md` et `grille.md` du dossier `runs/` du vault), sans relancer la génération, et tu dis ce qui change.
 8. Une demande sans rapport Red Team ne relève pas de la cellule. Dis-le en une ligne et renvoie vers le skill red-team.
 9. Réécrire le plan en intégrant les solutions est hors périmètre. Refuse en une ligne : la cellule propose, l'utilisateur adopte. Un plan révisé repasse par la Red Team comme un nouveau plan.
 10. Mise à jour de statut d'une solution historisée : tu appliques le cycle de vie du vault, sans relancer d'équipe.

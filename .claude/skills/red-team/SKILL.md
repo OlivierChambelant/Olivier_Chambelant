@@ -1,8 +1,8 @@
 ---
 name: red-team
-description: Cellule Red Team. Attaque un plan d'action, une décision ou un choix entre options pour trouver ce qui va réellement le faire échouer. Configure 3 à 5 sous-agents isolés (méthode + métier réel), vérifie leurs faits en ligne, purge les objections faibles et rend un rapport coté (fatal, sérieux, mineur). Ne propose aucune solution. À utiliser quand l'utilisateur ou un agent demande de « red teamer », « attaquer », « challenger », « stress-tester », faire un pré-mortem ou trouver les failles d'un plan ou d'une décision. Le rapport produit est l'entrée attendue par le skill blue-team.
+description: Cellule Red Team. Attaque un plan d'action, une décision ou un choix entre options pour trouver ce qui va réellement le faire échouer. Configure 3 à 5 sous-agents isolés (méthode + métier réel), vérifie leurs faits en ligne, purge les objections faibles et rend un rapport coté (fatal, sérieux, mineur). Ne propose aucune solution. À utiliser quand l'utilisateur ou un agent demande de « red teamer », « attaquer », « challenger », « stress-tester », faire un pré-mortem ou trouver les failles d'un plan ou d'une décision. Le rapport produit est l'entrée attendue par le skill blue-team. Historise chaque faille fatale ou sérieuse dans le vault Obsidian Coffre-fort (fiches « Comment j'ai pu… » et index). Traite aussi « la faille Fx s'est produite » ou « ne s'est pas produite ».
 argument-hint: "[plan ou décision, objectif, contraintes, horizon, acté, hors périmètre]"
-allowed-tools: Agent WebSearch WebFetch Read
+allowed-tools: Agent WebSearch WebFetch Read ToolSearch mcp__obsidian-vault__search_notes mcp__obsidian-vault__read_note mcp__obsidian-vault__read_multiple_notes mcp__obsidian-vault__list_directory mcp__obsidian-vault__write_note mcp__obsidian-vault__update_frontmatter mcp__obsidian-vault__patch_note
 ---
 
 # Cellule Red Team
@@ -27,6 +27,9 @@ Entrée : $ARGUMENTS. Si c'est vide, l'objet est ce que l'utilisateur vient de s
 4. Vérification des faits datés.
 5. Consolidation.
 6. Rapport : [references/format-rapport.md](references/format-rapport.md).
+7. Historisation dans le vault (section plus bas).
+
+Si la demande est « la faille Fx s'est produite » ou « ne s'est pas produite », applique seulement la section CYCLE DE VIE du protocole du vault, sans relancer d'équipe, puis arrête-toi.
 
 ## Appel par un autre agent
 
@@ -119,6 +122,17 @@ Après vérification, dans cet ordre :
 5. Classement. Fatal d'abord, puis sérieux, puis mineur. À impact égal, probabilité décroissante.
 6. Numérotation. Chaque faille survivante reçoit un identifiant stable F1, F2, F3 dans l'ordre du classement. Avec plusieurs options : A-F1, B-F1. La Blue Team s'appuie sur ces identifiants.
 7. Interdiction d'inflation. Tu n'ajoutes aucune objection qui n'a pas été produite par un sous-agent. Si les failles survivantes sont mineures, le rapport le dit. Si aucune ne survit, l'état du plan est « tient ».
+
+## Historisation
+
+Protocole commun aux deux cellules : [../blue-team/references/vault.md](../blue-team/references/vault.md). Lis-le avant d'écrire. Dans cet ordre :
+1. Sections ACCÈS et Règles d'écriture.
+2. Fixe l'identifiant du plan `[plan]` : 3 à 5 mots en minuscules, sans accent, reliés par des tirets. Il figure dans le rapport, section HISTORISATION, pour que la Blue Team le reprenne.
+3. RUNS : `rapport-red.md` dans `cellule-red-blue/runs/AAAA-MM-JJ_[plan]/`.
+4. FICHE RED : une par faille fatale ou sérieuse survivante. Titre « Comment j'ai pu … » selon la section Titres. Pas de fiche pour les mineures. Si le plan tient sans faille fatale ni sérieuse, aucune fiche.
+5. Index : une section pour le plan, une ligne par fiche. Si aucune fiche, une section avec la ligne « Aucune faille fatale ni sérieuse ».
+
+L'historisation vient après le rapport et ne le modifie pas, sauf la section HISTORISATION.
 
 ## Ton
 

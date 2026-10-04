@@ -16,7 +16,7 @@ Le rapport suit exactement cette structure.
 6. CONTRE-PASSE : failles trouvées, substitutions effectuées, conflits résolus.
 7. FAILLES OUVERTES : celles sans solution recevable, avec le critère bloquant.
 8. DONNÉES VÉRIFIÉES : tableau. Fait, valeur, source, statut, date de consultation.
-9. HISTORISATION : notes créées ou complétées, avec leur chemin, et chemin du dossier `cellule-runs/`. Sans accès au vault, les notes en blocs markdown, sous le titre « À coller dans Coffre-fort ».
+9. HISTORISATION : fiches Blue créées (titre et chemin), fiches Red mises à jour, lignes d'index modifiées, fichiers de `runs/`. Chaque élément porte « enregistrée » seulement après relecture réussie. Sans accès au vault, les fiches et lignes d'index en blocs markdown sous le titre « À coller dans Coffre-fort », et le chemin local des fichiers de runs.
 
 Rien après le point 9.
 
